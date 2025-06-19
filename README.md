@@ -1,3 +1,22 @@
+# Command line fork
+This is a very simple fork of gscScriptCompAndDecompiler modified to use the command line. This enables processing a single file or a directory of files. Very few changes were made:
+
+1. Removed all references to Tk and the GUI code
+2. Added a very simple command line argument parser that invokes the existing logic
+3. Moved all of the large constants to a separate static class (just to make it easier to collapse them all)
+4. (Machine) Translated a small number of comments.
+
+No changes were made to the bulk of the program. I did not even attempt to understand the gsc file format or how the existing logic works. These are just interfaces changes to avoid needing Tk.
+
+## Command line arguments
+The program requires exactly two positional arguments.
+1. Action: one of 'decompile', 'compile', 'recompile'
+2. Path: A file or directory. This will only work on direct children for a directory. Files must be .gsc or .txt, depending on the provided action.
+
+The output is placed in the same folder with the appropriate extension.
+
+------------------------
+
 # gscScriptCompAndDecompiler
 Tool for decompiling, compiling and rebuilding scripts .gsc from the visual novel's engine codeX RScript (also known as Liar-soft Engine or raiL-soft Engine).
 
